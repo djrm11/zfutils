@@ -8,16 +8,16 @@ import java.io.InputStream;
 import java.io.OutputStream;
 
 
-public class ZfUtils {
+public class ZfClassPath {
 	public static void main(String str[]){
-		new ZfUtils();
+		new ZfClassPath();
 	} 
 	
-	public ZfUtils() {
+	public ZfClassPath() {
 		super();
 		// TODO Auto-generated constructor stub
-//		testClasspath("org/zf/resources/testpath.txt");
-		copyFiles("org/zf/resources/testpath.txt");
+		testClasspath("org/zf/resources/testpath.txt");
+//		copyFiles("org/zf/resources/testpath.txt");
 	}
 	
 	public void copyFiles(String fileName){
@@ -81,29 +81,40 @@ public class ZfUtils {
 	}
 	
 	public void testClasspath(String fileName){
-//		System.out.println(this.getClass().getResource("")); 
+		System.out.println(this.getClass().getResource("")); 
 		/*得到的是当前类class文件的URI目录。不包括自己！
-		如：file：/D：/workspace/jbpmtest3/bin/com/test/*/
+		如：file:/D:/MyEclipseWorkspaces/zfutils/bin/org/zf/util/
+		file:/D:/MyEclipseWorkspaces/.metadata/.me_tcat/webapps/zfgeneralweb/WEB-INF/classes/com/smart/web/controller/	
+		*/
 		
-//		System.out.println(this.getClass().getResource("/")); 
+		System.out.println(this.getClass().getResource("/")); 
 		/*得到的是当前的classpath的绝对URI路径 。
-		如：file：/D：/workspace/jbpmtest3/bin/*/
+		如：file:/D:/MyEclipseWorkspaces/zfutils/bin/
+		file:/D:/MyEclipseWorkspaces/.metadata/.me_tcat/webapps/zfgeneralweb/WEB-INF/classes/	
+		*/
 
-//		System.out.println(this.getClass() .getClassLoader().getResource("")); 
+		System.out.println(this.getClass() .getClassLoader().getResource("")); 
 		/*得到的也是当前ClassPath的绝对URI路径 。
-		如：file：/D：/workspace/jbpmtest3/bin/*/
+		如：file:/D:/MyEclipseWorkspaces/zfutils/bin/
+		file:/D:/MyEclipseWorkspaces/.metadata/.me_tcat/webapps/zfgeneralweb/WEB-INF/classes/	
+		*/
 
-//		System.out.println(ClassLoader.getSystemResource("")); 
+		System.out.println(ClassLoader.getSystemResource("")); 
 		/*得到的也是当前ClassPath的绝对URI路径 。
-		如：file：/D：/workspace/jbpmtest3/bin/*/
+		如：file:/D:/MyEclipseWorkspaces/zfutils/bin/	
+		null
+		*/
 
-//		System.out.println(Thread.currentThread().getContextClassLoader ().getResource("")); 
+		System.out.println(Thread.currentThread().getContextClassLoader ().getResource("")); 
 		/*得到的也是当前ClassPath的绝对URI路径 。
-		如：file：/D：/workspace/jbpmtest3/bin/*/
+		如：file:/D:/MyEclipseWorkspaces/zfutils/bin/
+		file:/D:/MyEclipseWorkspaces/.metadata/.me_tcat/webapps/zfgeneralweb/WEB-INF/classes/
+		*/
 
 		/*System.out.println(ServletActionContext.getServletContext().getRealPath("/")); 
 		Web应用程序 中，得到Web应用程序的根目录的绝对路径。这样，我们只需要提供相对于Web应用程序根目录的路径，就可以构建出定位资源的绝对路径。
-		如：file：/D:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/WebProject*/
+		如：file：/D:/workspace/.metadata/.plugins/org.eclipse.wst.server.core/tmp0/wtpwebapps/WebProject
+		*/
 		
 		System.out.println(this.getClass() .getClassLoader().getResource(fileName)); 
 		System.out.println(this.getClass() .getClassLoader().getResourceAsStream (fileName));
